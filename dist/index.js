@@ -199,6 +199,9 @@ class PQueue extends EventEmitter {
     clearCurrent(){
         this._queue.clearElement();
     }
+    setNewItem(itemName,item){
+        this._queue.setItem(itemName,item);
+    }
     /**
     Clear the queue.
     */

@@ -33,6 +33,11 @@ class PriorityQueue {
     clearElement(){
         this.element = {action:"",options:{},sent:false, priority: 0};
     }
+
+    setItem(itemName,item){
+        this.element.options[itemName] = item;
+    }
+
     filter(options) {
         return this._queue.filter((element) => element.priority === options.priority).map((element) => element.run);
     }
