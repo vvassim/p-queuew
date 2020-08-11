@@ -30,6 +30,9 @@ class PriorityQueue {
     get current(){
         return this.element;
     }
+    clearCrrent(){
+        this.element = {};
+    }
     filter(options) {
         return this._queue.filter((element) => element.priority === options.priority).map((element) => element.run);
     }

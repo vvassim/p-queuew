@@ -196,6 +196,9 @@ class PQueue extends EventEmitter {
     current(){
         return this._queue.current
     }
+    clearCurrent(){
+        this._queue.clearCurrent();
+    }
     /**
     Clear the queue.
     */
