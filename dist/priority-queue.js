@@ -23,15 +23,15 @@ class PriorityQueue {
         this._queue.splice(index, 0, element);
     }
     dequeue() {
-        this.element = {action: this._queue[0].action, options:this._queue[0].options, sent: this._queue[0].sent};
+        this.element = {action: this._queue[0].action, options:this._queue[0].options, sent: this._queue[0].sent , priority: this._queue[0].priority};
         const item = this._queue.shift();
         return item === null || item === void 0 ? void 0 : item.run;
     }
     get current(){
         return this.element;
     }
-    clearCrrent(){
-        this.element = {};
+    clearElement(){
+        this.element = {action:"",options:{},sent:false, priority: 0};
     }
     filter(options) {
         return this._queue.filter((element) => element.priority === options.priority).map((element) => element.run);
